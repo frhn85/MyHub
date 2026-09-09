@@ -2611,3 +2611,11 @@ body.light-mode .setting-item p {
     padding: 18px;
     margin-top: 18px;
 }
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(5, 11, 22, 0.55), rgba(5, 11, 22, 0.75)),
+        url("fotohome.jpeg") center/cover no-repeat;
+}
