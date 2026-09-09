@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings — MyHub</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header">
+            <div>
+                <p class="small-title">MYHUB</p>
+                <h1>Settings</h1>
+                <p class="subtitle">Atur MyHub sesuai keinginan lo ⚙️</p>
+            </div>
+
+            <div class="profile-icon">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="settings-box">
+
+                <div class="section-title">
+                    <p>GENERAL</p>
+                    <h2>Pengaturan</h2>
+                </div>
+
+                <div class="setting-item">
+                    <div>
+                        <h3>Notifikasi</h3>
+                        <p>Aktifkan notifikasi MyHub</p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="notificationToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div>
+                        <h3>Efek Animasi</h3>
+                        <p>Gunakan animasi pada tampilan</p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="animationToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div>
+                        <h3>Mode Tampilan</h3>
+                        <p>Gunakan tampilan gelap MyHub</p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div>
+                        <h3>Warna Aksen</h3>
+                        <p>Pilih warna utama MyHub</p>
+                    </div>
+
+                    <select id="accentColor">
+                        <option value="blue">Biru</option>
+                        <option value="purple">Ungu</option>
+                        <option value="green">Hijau</option>
+                        <option value="red">Merah</option>
+                    </select>
+                </div>
+
+                <div class="setting-item danger-setting">
+                    <div>
+                        <h3>Hapus Semua Data</h3>
+                        <p>Hapus Notes, To-Do, Finance, dan Certificates</p>
+                    </div>
+
+                    <button id="clearAllData">
+                        <i class="fa-solid fa-trash"></i>
+                        Reset
+                    </button>
+                </div>
+
+            </section>
+
+            <br>
+
+            <a href="index.html">← Kembali ke Home</a>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

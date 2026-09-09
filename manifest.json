@@ -1,0 +1,17 @@
+{
+  "name": "MyHub",
+  "short_name": "MyHub",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#060a18",
+  "theme_color": "#287cff",
+  "description": "My personal space.",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

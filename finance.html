@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Finance — MyHub</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="header">
+        <div>
+            <p class="small-title">MYHUB</p>
+            <h1>Finance</h1>
+            <p class="subtitle">Catatan keuangan 💰</p>
+        </div>
+
+        <div class="profile-icon">
+            <i class="fa-solid fa-wallet"></i>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-text">
+                <p>MY BALANCE</p>
+
+                <h2 id="balance">Rp 0</h2>
+
+                <span>
+                    Kelola pemasukan dan pengeluaran lo.
+                </span>
+            </div>
+        </section>
+
+        <section class="finance-box">
+
+            <div class="section-title">
+                <p>TRANSACTION</p>
+                <h2>Tambah Transaksi</h2>
+            </div>
+
+            <input
+                type="text"
+                id="financeName"
+                placeholder="Contoh: Uang jajan"
+            >
+
+            <input
+                type="number"
+                id="financeAmount"
+                placeholder="Nominal"
+            >
+
+            <select id="financeType">
+                <option value="income">Pemasukan</option>
+                <option value="expense">Pengeluaran</option>
+            </select>
+
+            <button id="addFinance">
+                <i class="fa-solid fa-plus"></i>
+                Tambah Transaksi
+            </button>
+
+        </section>
+
+        <section class="finance-box">
+
+            <div class="section-title">
+                <p>HISTORY</p>
+                <h2>Riwayat</h2>
+            </div>
+
+            <div id="financeList"></div>
+
+        </section>
+
+        <br>
+
+        <a href="index.html">← Kembali ke Home</a>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

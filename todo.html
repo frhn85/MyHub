@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>To-Do — MyHub</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="header">
+        <div>
+            <p class="small-title">MYHUB</p>
+            <h1>To-Do</h1>
+            <p class="subtitle">Atur kegiatan gue ✅</p>
+        </div>
+
+        <div class="profile-icon">
+            <i class="fa-solid fa-list-check"></i>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="todo-box">
+
+            <div class="section-title">
+                <p>MY TASKS</p>
+                <h2>Daftar Kegiatan</h2>
+            </div>
+
+            <div class="todo-form">
+
+                <input
+                    type="text"
+                    id="todoInput"
+                    placeholder="Tulis kegiatan..."
+                >
+
+                <button id="addTodo">
+                    <i class="fa-solid fa-plus"></i>
+                    Tambah
+                </button>
+
+            </div>
+
+            <div id="todoList"></div>
+
+        </section>
+
+        <br>
+
+        <a href="index.html">← Kembali ke Home</a>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

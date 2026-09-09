@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile — MyHub</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header">
+            <div>
+                <p class="small-title">MYHUB</p>
+                <h1>Profile</h1>
+                <p class="subtitle">Profil pribadi lo 👤</p>
+            </div>
+
+            <div class="profile-icon">
+                <img src="gallery/frhn1.jpeg" alt="Profile">
+            </div>
+        </header>
+
+        <section class="profile-box">
+
+            <label class="profile-upload">
+                <img class="profile-photo" id="profilePhoto" src="gallery/frhn1.jpeg" alt="Profile">
+
+                <span>
+                    <i class="fa-solid fa-camera"></i>
+                    Ganti Foto
+                </span>
+
+                <input type="file" id="profileImageInput" accept="image/*">
+            </label>
+
+            <h2 id="profileName">Frhn</h2>
+            <p class="profile-bio" id="profileBio">
+                Welcome to my personal space.
+            </p>
+
+            <button id="editProfile" class="edit-profile-btn">
+                <i class="fa-solid fa-pen"></i>
+                Edit Profil
+            </button>
+
+            <div class="edit-profile-panel" id="editProfilePanel">
+
+                <input type="text" id="editName" placeholder="Nama lo">
+
+                <textarea id="editBio" placeholder="Bio lo"></textarea>
+
+                <div class="edit-profile-actions">
+                    <button id="saveProfile">
+                        <i class="fa-solid fa-check"></i>
+                        Simpan
+                    </button>
+
+                    <button id="cancelProfile">
+                        Batal
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="profile-stats">
+                <div>
+                    <strong>MyHub</strong>
+                    <span>Personal</span>
+                </div>
+
+                <div>
+                    <strong>2026</strong>
+                    <span>Since</span>
+                </div>
+            </div>
+
+        </section>
+
+        <br>
+
+        <a href="index.html">← Kembali ke Home</a>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

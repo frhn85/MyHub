@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calendar — MyHub</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="header">
+        <div>
+            <p class="small-title">MYHUB</p>
+            <h1>Calendar</h1>
+            <p class="subtitle">Jadwal & kegiatan 📅</p>
+        </div>
+
+        <div class="profile-icon">
+            <i class="fa-solid fa-calendar-days"></i>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+                <p>MY CALENDAR</p>
+
+                <h2 id="calendarMonth">September 2026</h2>
+
+                <span>
+                    Lihat tanggal dan jadwal lo.
+                </span>
+            </div>
+
+        </section>
+
+        <section class="calendar-box">
+
+            <div class="calendar-header">
+                <button id="prevMonth">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <h2 id="monthTitle">September 2026</h2>
+
+                <button id="nextMonth">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="calendar-week">
+                <span>Min</span>
+                <span>Sen</span>
+                <span>Sel</span>
+                <span>Rab</span>
+                <span>Kam</span>
+                <span>Jum</span>
+                <span>Sab</span>
+            </div>
+
+            <div id="calendarDays" class="calendar-days"></div>
+
+        </section>
+
+        <br>
+
+        <a href="index.html">← Kembali ke Home</a>
+
+    </main>
+
+</div>
+
+<script>
+const monthTitle = document.getElementById("monthTitle");
+const calendarMonth = document.getElementById("calendarMonth");
+const calendarDays = document.getElementById("calendarDays");
+
+const prevMonth = document.getElementById("prevMonth");
+const nextMonth = document.getElementById("nextMonth");
+
+let currentDate = new Date();
+
+function renderCalendar() {
+
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+
+    const monthName = currentDate.toLocaleDateString("id-ID", {
+        month: "long",
+        year: "numeric"
+    });
+
+    monthTitle.textContent =
+        monthName.charAt(0).toUpperCase() + monthName.slice(1);
+
+    calendarMonth.textContent =
+        monthName.charAt(0).toUpperCase() + monthName.slice(1);
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const totalDays = new Date(year, month + 1, 0).getDate();
+
+    calendarDays.innerHTML = "";
+
+    // Kotak kosong sebelum tanggal 1
+    for (let i = 0; i < firstDay; i++) {
+        const empty = document.createElement("div");
+        empty.className = "calendar-day empty";
+        calendarDays.appendChild(empty);
+    }
+
+    // Tanggal
+    for (let day = 1; day <= totalDays; day++) {
+
+        const dateBox = document.createElement("div");
+
+        dateBox.className = "calendar-day";
+        dateBox.textContent = day;
+
+        const today = new Date();
+
+        if (
+            day === today.getDate() &&
+            month === today.getMonth() &&
+            year === today.getFullYear()
+        ) {
+            dateBox.classList.add("today");
+        }
+
+        calendarDays.appendChild(dateBox);
+    }
+}
+
+prevMonth.addEventListener("click", () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    renderCalendar();
+});
+
+nextMonth.addEventListener("click", () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    renderCalendar();
+});
+
+renderCalendar();
+</script>
+
+</body>
+</html>

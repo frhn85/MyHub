@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Certificates — MyHub</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="header">
+        <div>
+            <p class="small-title">MYHUB</p>
+            <h1>Certificates</h1>
+            <p class="subtitle">Sertifikat & pencapaian 🏆</p>
+        </div>
+
+        <div class="profile-icon">
+            <i class="fa-solid fa-trophy"></i>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-text">
+                <p>MY ACHIEVEMENTS</p>
+
+                <h2>Pencapaian gue.</h2>
+
+                <span>
+                    Kumpulan sertifikat dan prestasi.
+                </span>
+            </div>
+        </section>
+
+        <section class="certificate-box">
+
+            <div class="section-title">
+                <p>ADD CERTIFICATE</p>
+                <h2>Tambah Sertifikat</h2>
+            </div>
+
+            <div class="certificate-form">
+
+                <input
+                type="text"
+                id="certificateName"
+                placeholder="Nama sertifikat"
+    >
+
+                <input
+                type="text"
+                id="certificateInfo"
+                placeholder="Keterangan / penyelenggara"
+    >    
+
+             <label class="upload-certificate">
+                <i class="fa-solid fa-image"></i>
+                Pilih Foto Sertifikat
+                <input
+                type="file"
+                id="certificateImage"
+                accept="image/*"
+        >
+            </label>
+
+                <button id="addCertificate">
+                <i class="fa-solid fa-plus"></i>
+                Tambah Sertifikat
+                </button>
+
+         </div>
+
+        </section>
+
+        <section class="certificate-box">
+
+            <div class="section-title">
+                <p>MY CERTIFICATES</p>
+                <h2>Sertifikat Gue</h2>
+            </div>
+
+            <div id="certificateList"></div>
+
+        </section>
+
+        <br>
+
+        <a href="index.html">← Kembali ke Home</a>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

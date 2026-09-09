@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notes — MyHub</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="header">
+        <div>
+            <p class="small-title">MYHUB</p>
+            <h1>Notes</h1>
+            <p class="subtitle">Catatan pribadi gue 📝</p>
+        </div>
+
+        <div class="profile-icon">
+            <i class="fa-solid fa-note-sticky"></i>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="notes-box">
+
+            <div class="section-title">
+                <p>CREATE NOTE</p>
+                <h2>Buat Catatan</h2>
+            </div>
+
+            <input
+                type="text"
+                id="noteTitle"
+                placeholder="Judul catatan"
+            >
+
+            <textarea
+                id="noteText"
+                placeholder="Tulis catatan lo di sini..."
+            ></textarea>
+
+            <button id="saveNote">
+                <i class="fa-solid fa-plus"></i>
+                Simpan Catatan
+            </button>
+
+        </section>
+
+        <section class="notes-box">
+
+            <div class="section-title">
+                <p>SAVED NOTES</p>
+                <h2>Catatan Gue</h2>
+            </div>
+
+            <div id="savedNotes"></div>
+
+        </section>
+
+        <br>
+
+        <a href="index.html">← Kembali ke Home</a>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
