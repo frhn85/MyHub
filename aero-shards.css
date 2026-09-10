@@ -1,0 +1,34 @@
+/* Aero Shards background layer for MyHub */
+.aero-shards {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    isolation: isolate;
+    background: radial-gradient(circle at 50% 15%, rgba(30, 85, 170, 0.10), transparent 48%);
+}
+
+.aero-shards canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.92;
+}
+
+.app {
+    position: relative;
+    z-index: 1;
+}
+
+.bottom-nav {
+    z-index: 20;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aero-shards canvas { opacity: 0.55; }
+}
