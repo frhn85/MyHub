@@ -34,16 +34,16 @@
   }
 
   function createShards() {
-    const count = mobile ? 18 : 30;
+    const count = mobile ? 32 : 48;
     shards = Array.from({ length: count }, (_, i) => ({
       x: random(-0.08, 1.08),
       y: random(-0.08, 1.08),
-      size: random(20, mobile ? 90 : 150),
+      size: random(7, mobile ? 42 : 78),
       angle: random(0, Math.PI * 2),
       spin: random(-0.00035, 0.00035),
       speed: random(0.000015, 0.000045),
       drift: random(-0.000025, 0.000025),
-      alpha: random(0.08, 0.22),
+      alpha: random(0.18, 0.38),
       depth: random(0.35, 1),
       phase: random(0, Math.PI * 2),
       shape: i % 3
@@ -88,7 +88,7 @@
     ctx.closePath();
     ctx.fill();
 
-    ctx.strokeStyle = 'rgba(120,190,255,0.13)';
+    ctx.strokeStyle = 'rgba(120,190,255,0.24)';
     ctx.lineWidth = 1;
     ctx.stroke();
     ctx.restore();
@@ -110,8 +110,8 @@
       height * 0.45,
       Math.max(width, height) * 0.72
     );
-    glow.addColorStop(0, 'rgba(50,105,255,0.10)');
-    glow.addColorStop(0.48, 'rgba(95,65,220,0.045)');
+    glow.addColorStop(0, 'rgba(50,105,255,0.075)');
+    glow.addColorStop(0.48, 'rgba(95,65,220,0.035)');
     glow.addColorStop(1, 'rgba(0,0,0,0)');
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, width, height);
