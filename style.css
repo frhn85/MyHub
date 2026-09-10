@@ -2988,3 +2988,20 @@ body{padding-bottom:105px;}
  .bottom-nav a i{font-size:17px;}
  body{padding-bottom:92px;}
 }
+
+
+/* Ikon game */
+.game-app .game-icon{
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(30,72,140,.22);
+}
+.game-app .game-icon img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:inherit;
+}
