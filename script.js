@@ -58,7 +58,7 @@ function displayNotes() {
             <h3>${note.title}</h3>
             <p>${note.text}</p>
             <button onclick="deleteNote(${index})">
-                🗑️ Hapus
+                 Hapus
             </button>
         `;
 
@@ -148,7 +148,7 @@ function displayTodos() {
                 </span>
             </label>
 
-            <button>🗑️</button>
+            <button></button>
         `;
 
 
@@ -328,7 +328,7 @@ function displayFinance() {
             </div>
 
             <button onclick="deleteFinance(${index})">
-                🗑️
+                
             </button>
         `;
 
@@ -411,7 +411,7 @@ function displayCertificates() {
         card.innerHTML = `
             ${item.image
                 ? `<img src="${item.image}" class="certificate-photo">`
-                : `<div class="certificate-icon">🏆</div>`
+                : `<div class="certificate-icon"></div>`
             }
 
             <div class="certificate-info">
@@ -420,7 +420,7 @@ function displayCertificates() {
             </div>
 
             <button onclick="deleteCertificate(${index})">
-                🗑️
+                
             </button>
         `;
 
@@ -515,13 +515,13 @@ function updateHomeInfo() {
 
     if (greeting) {
         if (hour < 11) {
-            greeting.textContent = "Selamat pagi 👋";
+            greeting.textContent = "Selamat pagi ";
         } else if (hour < 15) {
-            greeting.textContent = "Selamat siang 👋";
+            greeting.textContent = "Selamat siang ";
         } else if (hour < 18) {
-            greeting.textContent = "Selamat sore 👋";
+            greeting.textContent = "Selamat sore ";
         } else {
-            greeting.textContent = "Selamat malam 👋";
+            greeting.textContent = "Selamat malam ";
         }
     }
 

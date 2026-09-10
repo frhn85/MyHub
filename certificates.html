@@ -23,7 +23,7 @@
         <div>
             <p class="small-title">MYHUB</p>
             <h1>Certificates</h1>
-            <p class="subtitle">Sertifikat & pencapaian 🏆</p>
+            <p class="subtitle">Sertifikat & pencapaian </p>
         </div>
 
         <div class="profile-icon">
@@ -37,7 +37,7 @@
             <div class="hero-text">
                 <p>MY ACHIEVEMENTS</p>
 
-                <h2>Pencapaian gue.</h2>
+                <h2>Pencapaian gw.</h2>
 
                 <span>
                     Kumpulan sertifikat dan prestasi.
@@ -89,7 +89,7 @@
 
             <div class="section-title">
                 <p>MY CERTIFICATES</p>
-                <h2>Sertifikat Gue</h2>
+                <h2>Sertifikat gw</h2>
             </div>
 
             <div id="certificateList"></div>
@@ -107,5 +107,28 @@
 <script src="script.js"></script>
 
     <script src="aero-shards.js"></script>
+
+    <nav class="bottom-nav">
+        <a href="index.html" data-nav="home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="game.html" data-nav="game">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Game</span>
+        </a>
+        <a href="finance.html" data-nav="finance">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Finance</span>
+        </a>
+        <a href="settings.html" data-nav="settings">
+            <i class="fa-solid fa-gear"></i>
+            <span>Pengaturan</span>
+        </a>
+    </nav>
+
+<script>
+(function(){const p=location.pathname.split("/").pop()||"index.html";const map={"index.html":"home","game.html":"game","finance.html":"finance","settings.html":"settings"};const k=map[p]||"";document.querySelectorAll(".bottom-nav a").forEach(a=>{if(a.dataset.nav===k)a.classList.add("active");});})();
+</script>
 </body>
 </html>
