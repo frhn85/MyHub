@@ -3258,3 +3258,57 @@ html, body {
 .aero-shards {
   max-width: 100vw;
 }
+
+
+/* MyHub mobile topbar + scrollbar fix */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+* {
+  box-sizing: border-box;
+}
+.myhub-topbar {
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow: hidden !important;
+}
+.myhub-topbar-inner,
+.myhub-topbar > div {
+  max-width: 100% !important;
+}
+.myhub-topbar .myhub-profile-btn {
+  flex: 0 0 auto !important;
+  margin-left: 8px !important;
+}
+.myhub-topbar .myhub-notify-btn {
+  flex: 0 0 auto !important;
+}
+.myhub-drawer {
+  max-width: 88vw !important;
+  right: 0 !important;
+  left: auto !important;
+}
+@media (max-width: 600px) {
+  .myhub-topbar {
+    padding-left: 14px !important;
+    padding-right: 10px !important;
+  }
+  .myhub-topbar .myhub-logo,
+  .myhub-topbar .myhub-brand {
+    min-width: 0 !important;
+  }
+  .myhub-topbar .myhub-search {
+    margin-left: auto !important;
+  }
+}

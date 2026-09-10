@@ -21,7 +21,7 @@ function inject(){
  const menuItems=links.map(([n,h,i])=>`<a href="${depth+h}" data-myhub-link="${n.toLowerCase()}"><i class="fa-solid ${i}"></i><span>${n}</span></a>`).join('');
  const el=document.createElement('div');el.id='myhubGlobal';el.innerHTML=`
  <header class="myhub-topbar ${isHome?'is-home':'not-home'}">
-   <a class="myhub-brand" href="${depth}index.html" aria-label="MyHub Home"><span class="myhub-brand-mark"><i class="fa-solid fa-cube"></i></span><strong>MyHub</strong></a>
+   <a class="myhub-brand" style="min-width:0;flex:1 1 auto" href="${depth}index.html" aria-label="MyHub Home"><span class="myhub-brand-mark"><i class="fa-solid fa-cube"></i></span><strong>MyHub</strong></a>
    <div class="myhub-top-actions">
      <button class="myhub-top-btn" data-action="search" aria-label="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
      <button class="myhub-top-btn" aria-label="Notifikasi"><i class="fa-regular fa-bell"></i></button>
