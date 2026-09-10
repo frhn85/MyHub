@@ -3222,3 +3222,7 @@ body {
     .myhub-top-btn { width: 40px; height: 40px; }
     .myhub-avatar-btn { width: 42px; height: 42px; }
 }
+
+
+/* FIX: hide legacy page headers/profile icons; use the MyHub YouTube-style topbar instead */
+.header, .profile-icon { display:none !important; }

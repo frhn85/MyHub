@@ -44,25 +44,25 @@
             <div class="game-grid">
 
                 <!-- FREE FIRE -->
-                <a href="freefire.html" class="game-app">
+                <a href="https://play.google.com/store/apps/details?id=com.dts.freefireth" class="game-app" data-game-scheme="freefire://" data-game-package="com.dts.freefireth">
                     <div class="game-icon"><img src="https://play-lh.googleusercontent.com/JT88XmsHoGDio7FxONwh382DhuTxuccfMmWFDtRBFjilySzNqWOCxUhqm8IhBKzQSwVrW2HWp_XvSgKFwi3ETA%3Dw240-h480" alt="Ikon Free Fire"></div>
                     <h3>Free Fire</h3>
                 </a>
 
                 <!-- MOBILE LEGENDS -->
-                <a href="mobilelegends.html" class="game-app">
+                <a href="https://play.google.com/store/apps/details?id=com.mobile.legends" class="game-app" data-game-scheme="mobilelegends://" data-game-package="com.mobile.legends">
                     <div class="game-icon"><img src="https://play-lh.googleusercontent.com/MztmLpB1-_eFbHnqNzzvzl5zjiOH2BEb0D71uBxZYf_4BEmW3QEPWODhRtyqY7Qz4wRLwQ--Rg1RAjOFqtHSs-o%3Dw240-h480" alt="Ikon Mobile Legends: Bang Bang"></div>
                     <h3>Mobile Legends</h3>
                 </a>
 
                 <!-- MAGIC CHESS -->
-                <a href="magicchess.html" class="game-app">
+                <a href="https://play.google.com/store/apps/details?id=com.mobilechess.gp" class="game-app" data-game-scheme="magicchess://" data-game-package="com.mobilechess.gp">
                     <div class="game-icon"><img src="https://play-lh.googleusercontent.com/uCoc4iwT9cUgSVK47Zvnbyu10JDudzNnNkky-9Suz5tU9cGKat4A23YfohUXzJh-wnlz0VWI-G58XHBFM2OBdA%3Dw240-h480" alt="Ikon Magic Chess: Go Go"></div>
                     <h3>Magic Chess</h3>
                 </a>
 
                 <!-- BLOCK BLAST -->
-                <a href="blockblast.html" class="game-app">
+                <a href="https://play.google.com/store/apps/details?id=com.block.juggle" class="game-app" data-game-scheme="blockblast://" data-game-package="com.block.juggle">
                     <div class="game-icon"><img src="https://play-lh.googleusercontent.com/5FLR-EBlfNvoV9ydZkOMDqRF10nV64XcKdZzW_oQzmz2e8Me9PS5Zncnvviki0J3XumjO2a_lg6_IdwOqwnV%3Dw240-h480" alt="Ikon Block Blast"></div>
                     <h3>Block Blast</h3>
                 </a>
@@ -101,6 +101,30 @@
 
 <script>
 (function(){const p=location.pathname.split("/").pop()||"index.html";const map={"index.html":"home","game.html":"game","finance.html":"finance","settings.html":"settings"};const k=map[p]||"";document.querySelectorAll(".bottom-nav a").forEach(a=>{if(a.dataset.nav===k)a.classList.add("active");});})();
+</script>
+<script>
+(function(){
+  function launchGame(card){
+    var fallback=card.getAttribute('href');
+    var scheme=card.dataset.gameScheme;
+    var pkg=card.dataset.gamePackage;
+    var left=true;
+    var done=false;
+    function fallbackOpen(){ if(done)return; done=true; window.location.href=fallback; }
+    document.addEventListener('visibilitychange',function(){ if(document.hidden){left=false; done=true;} },{once:true});
+    window.addEventListener('pagehide',function(){done=true;},{once:true});
+    if(/Android/i.test(navigator.userAgent) && pkg){
+      var intent='intent://launch#Intent;scheme='+scheme.replace('://','')+';package='+pkg+';end';
+      window.location.href=intent;
+    }else if(scheme){
+      window.location.href=scheme;
+    }else{ fallbackOpen(); return; }
+    setTimeout(function(){ if(!document.hidden && !done) fallbackOpen(); },1200);
+  }
+  document.querySelectorAll('.game-app[data-game-package]').forEach(function(card){
+    card.addEventListener('click',function(e){ e.preventDefault(); launchGame(card); });
+  });
+})();
 </script>
 <script src="myhub-plus.js"></script>
 </body>
