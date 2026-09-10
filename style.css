@@ -3228,42 +3228,33 @@ body {
 .header, .profile-icon { display:none !important; }
 
 
-/* ===== MOBILE OVERFLOW FIX =====
-   Prevent off-screen UI (especially the profile drawer) from creating
-   a black/blue strip on the right side of the viewport. */
+/* MyHub final overflow safety */
 html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
 }
-
 *, *::before, *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 .myhub-topbar {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
-
 .myhub-drawer {
-    box-sizing: border-box;
-    width: min(370px, 88vw);
-    max-width: 88vw;
-    transform: translateX(110%);
+  box-sizing: border-box;
+  width: min(370px, 88vw);
+  max-width: 88vw;
+  transform: translateX(110%);
 }
-
 .myhub-drawer.open {
-    transform: translateX(0);
+  transform: translateX(0);
 }
-
 .myhub-overlay {
-    width: 100%;
-    max-width: 100%;
+  width: 100%;
+  max-width: 100%;
 }
-
 .aero-shards {
-    max-width: 100vw;
+  max-width: 100vw;
 }
-

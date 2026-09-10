@@ -1,7 +1,7 @@
 /* MyHub Plus - global navigation, profile, search, favorites, dashboard, achievements, PIN and media helpers */
 (function(){
 'use strict';
-const depth = location.pathname.includes('/games/') ? '../' : '';
+const depth = '';
 const home = depth + 'index.html';
 const links = [
  ['Profil','profile.html','fa-user'],['Beranda','index.html','fa-house'],['Game','game.html','fa-gamepad'],['Music','music.html','fa-music'],['Gallery','gallery.html','fa-images'],['Notes','notes.html','fa-note-sticky'],['To-Do','todo.html','fa-list-check'],['Calendar','calendar.html','fa-calendar-days'],['Prestasi & Sertifikat','certificates.html','fa-trophy'],['Finance','finance.html','fa-wallet'],['Pengaturan','settings.html','fa-gear']
