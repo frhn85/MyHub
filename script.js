@@ -503,57 +503,6 @@ function deleteCertificate(index) {
 displayCertificates();
 
 // ==========================
-// HOME GREETING
-// ==========================
-
-const greeting = document.getElementById("greeting");
-const homeDate = document.getElementById("homeDate");
-
-function updateHomeInfo() {
-    const now = new Date();
-    const hour = now.getHours();
-
-    if (greeting) {
-        if (hour < 11) {
-            greeting.textContent = "Selamat pagi ";
-        } else if (hour < 15) {
-            greeting.textContent = "Selamat siang ";
-        } else if (hour < 18) {
-            greeting.textContent = "Selamat sore ";
-        } else {
-            greeting.textContent = "Selamat malam ";
-        }
-    }
-
-    if (homeDate) {
-        homeDate.textContent = now.toLocaleDateString("id-ID", {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-        });
-    }
-}
-
-updateHomeInfo();
-setInterval(updateHomeInfo, 60000);
-
-// HOME CLOCK
-
-const homeClock = document.getElementById("homeClock");
-
-function updateHomeClock() {
-    if (!homeClock) return;
-
-    const now = new Date();
-
-    homeClock.textContent = now.toLocaleTimeString("id-ID");
-}
-
-updateHomeClock();
-setInterval(updateHomeClock, 1000);
-
-// ==========================
 // SETTINGS
 // ==========================
 
