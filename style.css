@@ -2780,3 +2780,165 @@ body.light-mode .setting-item p {
         padding: 12px 20px;
     }
 }
+/* =========================================
+   CENTERED TITLES — MYHUB POLISH
+========================================= */
+
+/* Semua judul bagian dibuat konsisten dan berada di tengah */
+.section-title {
+    width: 100%;
+    margin: 0 auto 24px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title p {
+    display: inline-block;
+    margin-bottom: 7px;
+    padding: 5px 12px;
+    border: 1px solid rgba(80, 160, 255, 0.18);
+    border-radius: 999px;
+    background: rgba(40, 124, 255, 0.07);
+    color: #65adff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3.5px;
+}
+
+.section-title h2 {
+    position: relative;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 28px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+}
+
+.section-title h2::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 3px;
+    margin: 10px auto 0;
+    border-radius: 99px;
+    background: linear-gradient(90deg, transparent, #55a3ff, transparent);
+    opacity: 0.9;
+}
+
+/* Judul halaman: Gallery, Music, Game, Finance, dll. */
+.header:not(.home-header) {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    min-height: 105px;
+    padding: 8px 65px;
+}
+
+.header:not(.home-header) > div:first-child {
+    width: 100%;
+}
+
+.header:not(.home-header) .small-title {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 4px 11px;
+    border: 1px solid rgba(80, 160, 255, 0.16);
+    border-radius: 999px;
+    background: rgba(40, 124, 255, 0.06);
+    font-weight: 800;
+}
+
+.header:not(.home-header) h1 {
+    margin: 0;
+    font-size: 42px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -1.3px;
+    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.header:not(.home-header) .subtitle {
+    margin-top: 7px;
+    font-size: 14px;
+    color: #a9b8ce;
+}
+
+.header:not(.home-header) .profile-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Judul di dalam hero Home */
+.hero-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-text p {
+    display: inline-block;
+    padding: 5px 12px;
+    border: 1px solid rgba(80, 160, 255, 0.16);
+    border-radius: 999px;
+    background: rgba(40, 124, 255, 0.08);
+}
+
+.hero h2 {
+    text-align: center;
+}
+
+.hero span {
+    display: block;
+    text-align: center;
+}
+
+/* Kalender */
+.calendar-header {
+    text-align: center;
+    justify-content: center;
+}
+
+.calendar-header h2 {
+    text-align: center;
+}
+
+/* Supaya judul tetap nyaman di HP */
+@media (max-width: 600px) {
+    .header:not(.home-header) {
+        min-height: 100px;
+        padding: 8px 55px;
+    }
+
+    .header:not(.home-header) h1 {
+        font-size: 34px;
+    }
+
+    .section-title {
+        margin-bottom: 20px;
+    }
+
+    .section-title p {
+        font-size: 9px;
+        letter-spacing: 3px;
+        padding: 4px 10px;
+    }
+
+    .section-title h2 {
+        font-size: 25px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+}
