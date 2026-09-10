@@ -27,9 +27,9 @@
                 <p class="subtitle">Profil pribadi lu </p>
             </div>
 
-            <button class="profile-icon myhub-menu-trigger" type="button" onclick="openMyHubMenu()" aria-label="Buka menu MyHub" title="Menu">
+            <div class="profile-icon">
                 <img src="frhn12.jpeg" alt="Profile">
-            </button>
+            </div>
         </header>
 
         <section class="profile-box">
@@ -119,65 +119,6 @@
 <script>
 (function(){const p=location.pathname.split("/").pop()||"index.html";const map={"index.html":"home","game.html":"game","finance.html":"finance","settings.html":"settings"};const k=map[p]||"";document.querySelectorAll(".bottom-nav a").forEach(a=>{if(a.dataset.nav===k)a.classList.add("active");});})();
 </script>
-
-<!-- MyHub side menu -->
-<div class="myhub-menu-overlay" id="myhubMenu" aria-hidden="true">
-  <aside class="myhub-side-menu" role="dialog" aria-label="Menu MyHub">
-    <div class="myhub-menu-head">
-      <img class="myhub-menu-avatar" src="frhn12.jpeg" alt="Profil MyHub">
-      <div class="myhub-menu-user">
-        <strong>MyHub</strong>
-        <span>Personal dashboard</span>
-      </div>
-      <button class="myhub-menu-close" type="button" onclick="closeMyHubMenu()" aria-label="Tutup menu"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-
-    <div class="myhub-menu-balance">
-      <b>Menu Cepat</b>
-      <small>Akses semua bagian MyHub dari satu tempat.</small>
-    </div>
-
-    <nav class="myhub-menu-list">
-      <a class="myhub-menu-link" href="profile.html"><i class="fa-solid fa-user"></i><span>Profil</span></a>
-      <a class="myhub-menu-link" href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
-      <a class="myhub-menu-link" href="music.html"><i class="fa-solid fa-music"></i><span>Music</span></a>
-      <a class="myhub-menu-link" href="game.html"><i class="fa-solid fa-gamepad"></i><span>Game</span></a>
-      <a class="myhub-menu-link" href="calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
-      <a class="myhub-menu-link" href="clock.html"><i class="fa-solid fa-clock"></i><span>Clock</span></a>
-      <a class="myhub-menu-link" href="finance.html"><i class="fa-solid fa-wallet"></i><span>Finance</span></a>
-      <a class="myhub-menu-link" href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span></a>
-      <a class="myhub-menu-link" href="notes.html"><i class="fa-solid fa-note-sticky"></i><span>Notes</span></a>
-      <a class="myhub-menu-link" href="todo.html"><i class="fa-solid fa-list-check"></i><span>To-Do</span></a>
-      <a class="myhub-menu-link" href="certificates.html"><i class="fa-solid fa-trophy"></i><span>Certificates</span></a>
-      <div class="myhub-menu-divider"></div>
-      <a class="myhub-menu-link" href="settings.html"><i class="fa-solid fa-gear"></i><span>Pengaturan</span></a>
-    </nav>
-    <div class="myhub-menu-footer">MyHub · Personal space</div>
-  </aside>
-</div>
-
-<script>
-(function(){
-  const menu=document.getElementById('myhubMenu');
-  window.openMyHubMenu=function(){
-    if(!menu)return;
-    menu.classList.add('open');
-    menu.setAttribute('aria-hidden','false');
-    document.body.classList.add('myhub-menu-open');
-  };
-  window.closeMyHubMenu=function(){
-    if(!menu)return;
-    menu.classList.remove('open');
-    menu.setAttribute('aria-hidden','true');
-    document.body.classList.remove('myhub-menu-open');
-  };
-  if(menu){
-    menu.addEventListener('click',function(e){ if(e.target===menu) closeMyHubMenu(); });
-    document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeMyHubMenu(); });
-  }
-})();
-</script>
-
 </body>
 
 </html>

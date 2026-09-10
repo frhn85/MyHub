@@ -27,9 +27,9 @@
             <p class="subtitle">Game favorit gw </p>
         </div>
 
-        <button class="profile-icon myhub-menu-trigger" type="button" onclick="openMyHubMenu()" aria-label="Buka menu MyHub" title="Menu">
+        <div class="profile-icon">
             <i class="fa-solid fa-gamepad"></i>
-        </button>
+        </div>
     </header>
 
     <main>
@@ -44,25 +44,25 @@
             <div class="game-grid">
 
                 <!-- FREE FIRE -->
-                <a href="https://play.google.com/store/apps/details?id=com.dts.freefireth" class="game-app game-launch" data-package="com.dts.freefireth" data-store="https://play.google.com/store/apps/details?id=com.dts.freefireth">
+                <a href="games/freefire.html" class="game-app">
                     <div class="game-icon"><img src="https://play-lh.googleusercontent.com/JT88XmsHoGDio7FxONwh382DhuTxuccfMmWFDtRBFjilySzNqWOCxUhqm8IhBKzQSwVrW2HWp_XvSgKFwi3ETA%3Dw240-h480" alt="Ikon Free Fire"></div>
                     <h3>Free Fire</h3>
                 </a>
 
                 <!-- MOBILE LEGENDS -->
-                <a href="https://play.google.com/store/apps/details?id=com.mobile.legends" class="game-app game-launch" data-package="com.mobile.legends" data-store="https://play.google.com/store/apps/details?id=com.mobile.legends">
+                <a href="games/mobilelegends.html" class="game-app">
                     <div class="game-icon"><img src="https://play-lh.googleusercontent.com/MztmLpB1-_eFbHnqNzzvzl5zjiOH2BEb0D71uBxZYf_4BEmW3QEPWODhRtyqY7Qz4wRLwQ--Rg1RAjOFqtHSs-o%3Dw240-h480" alt="Ikon Mobile Legends: Bang Bang"></div>
                     <h3>Mobile Legends</h3>
                 </a>
 
                 <!-- MAGIC CHESS -->
-                <a href="https://play.google.com/store/apps/details?id=com.mobilechess.gp" class="game-app game-launch" data-package="com.mobilechess.gp" data-store="https://play.google.com/store/apps/details?id=com.mobilechess.gp">
+                <a href="games/magicchess.html" class="game-app">
                     <div class="game-icon"><img src="https://play-lh.googleusercontent.com/uCoc4iwT9cUgSVK47Zvnbyu10JDudzNnNkky-9Suz5tU9cGKat4A23YfohUXzJh-wnlz0VWI-G58XHBFM2OBdA%3Dw240-h480" alt="Ikon Magic Chess: Go Go"></div>
                     <h3>Magic Chess</h3>
                 </a>
 
                 <!-- BLOCK BLAST -->
-                <a href="https://play.google.com/store/apps/details?id=com.block.juggle" class="game-app game-launch" data-package="com.block.juggle" data-store="https://play.google.com/store/apps/details?id=com.block.juggle">
+                <a href="games/blockblast.html" class="game-app">
                     <div class="game-icon"><img src="https://play-lh.googleusercontent.com/5FLR-EBlfNvoV9ydZkOMDqRF10nV64XcKdZzW_oQzmz2e8Me9PS5Zncnvviki0J3XumjO2a_lg6_IdwOqwnV%3Dw240-h480" alt="Ikon Block Blast"></div>
                     <h3>Block Blast</h3>
                 </a>
@@ -79,22 +79,6 @@
 </div>
 
     <script src="aero-shards.js"></script>
-
-<script>
-document.querySelectorAll('.game-launch').forEach(function(card){
-  card.addEventListener('click', function(e){
-    if(!/Android/i.test(navigator.userAgent)) return;
-    e.preventDefault();
-    const pkg = card.dataset.package;
-    const store = card.dataset.store;
-    const fallback = setTimeout(function(){ window.location.href = store; }, 1200);
-    document.addEventListener('visibilitychange', function(){
-      if(document.hidden) clearTimeout(fallback);
-    }, {once:true});
-    window.location.href = 'intent://#Intent;package=' + pkg + ';scheme=myhubgame;end';
-  });
-});
-</script>
 
     <nav class="bottom-nav">
         <a href="index.html" data-nav="home">
@@ -118,64 +102,5 @@ document.querySelectorAll('.game-launch').forEach(function(card){
 <script>
 (function(){const p=location.pathname.split("/").pop()||"index.html";const map={"index.html":"home","game.html":"game","finance.html":"finance","settings.html":"settings"};const k=map[p]||"";document.querySelectorAll(".bottom-nav a").forEach(a=>{if(a.dataset.nav===k)a.classList.add("active");});})();
 </script>
-
-<!-- MyHub side menu -->
-<div class="myhub-menu-overlay" id="myhubMenu" aria-hidden="true">
-  <aside class="myhub-side-menu" role="dialog" aria-label="Menu MyHub">
-    <div class="myhub-menu-head">
-      <img class="myhub-menu-avatar" src="frhn12.jpeg" alt="Profil MyHub">
-      <div class="myhub-menu-user">
-        <strong>MyHub</strong>
-        <span>Personal dashboard</span>
-      </div>
-      <button class="myhub-menu-close" type="button" onclick="closeMyHubMenu()" aria-label="Tutup menu"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-
-    <div class="myhub-menu-balance">
-      <b>Menu Cepat</b>
-      <small>Akses semua bagian MyHub dari satu tempat.</small>
-    </div>
-
-    <nav class="myhub-menu-list">
-      <a class="myhub-menu-link" href="profile.html"><i class="fa-solid fa-user"></i><span>Profil</span></a>
-      <a class="myhub-menu-link" href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
-      <a class="myhub-menu-link" href="music.html"><i class="fa-solid fa-music"></i><span>Music</span></a>
-      <a class="myhub-menu-link" href="game.html"><i class="fa-solid fa-gamepad"></i><span>Game</span></a>
-      <a class="myhub-menu-link" href="calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
-      <a class="myhub-menu-link" href="clock.html"><i class="fa-solid fa-clock"></i><span>Clock</span></a>
-      <a class="myhub-menu-link" href="finance.html"><i class="fa-solid fa-wallet"></i><span>Finance</span></a>
-      <a class="myhub-menu-link" href="gallery.html"><i class="fa-solid fa-images"></i><span>Gallery</span></a>
-      <a class="myhub-menu-link" href="notes.html"><i class="fa-solid fa-note-sticky"></i><span>Notes</span></a>
-      <a class="myhub-menu-link" href="todo.html"><i class="fa-solid fa-list-check"></i><span>To-Do</span></a>
-      <a class="myhub-menu-link" href="certificates.html"><i class="fa-solid fa-trophy"></i><span>Certificates</span></a>
-      <div class="myhub-menu-divider"></div>
-      <a class="myhub-menu-link" href="settings.html"><i class="fa-solid fa-gear"></i><span>Pengaturan</span></a>
-    </nav>
-    <div class="myhub-menu-footer">MyHub · Personal space</div>
-  </aside>
-</div>
-
-<script>
-(function(){
-  const menu=document.getElementById('myhubMenu');
-  window.openMyHubMenu=function(){
-    if(!menu)return;
-    menu.classList.add('open');
-    menu.setAttribute('aria-hidden','false');
-    document.body.classList.add('myhub-menu-open');
-  };
-  window.closeMyHubMenu=function(){
-    if(!menu)return;
-    menu.classList.remove('open');
-    menu.setAttribute('aria-hidden','true');
-    document.body.classList.remove('myhub-menu-open');
-  };
-  if(menu){
-    menu.addEventListener('click',function(e){ if(e.target===menu) closeMyHubMenu(); });
-    document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeMyHubMenu(); });
-  }
-})();
-</script>
-
 </body>
 </html>
