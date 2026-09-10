@@ -3005,3 +3005,38 @@ body{padding-bottom:105px;}
   object-fit:cover;
   border-radius:inherit;
 }
+
+
+/* Tombol kembali ke Home - pojok kiri atas */
+.back-home{
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:1100;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:10px 15px;
+  border:1px solid rgba(80,150,255,.28);
+  border-radius:14px;
+  background:rgba(8,18,40,.72);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  color:var(--text,#f7f8ff);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+  transition:.2s ease;
+}
+.back-home i{font-size:13px;}
+.back-home:hover{transform:translateY(-1px);background:rgba(30,80,150,.35);}
+@media(max-width:430px){
+  .back-home{
+    top:14px;
+    left:14px;
+    padding:9px 12px;
+    border-radius:12px;
+    font-size:12px;
+  }
+}
