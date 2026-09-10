@@ -17,25 +17,36 @@ function toast(msg){let t=document.getElementById('myhubToast');if(!t){t=documen
 function inject(){
  if(document.getElementById('myhubGlobal'))return;
  const p=profile();
+ const isHome = /(^|\/)index\.html?$/.test(location.pathname) || location.pathname.endsWith('/');
  const menuItems=links.map(([n,h,i])=>`<a href="${depth+h}" data-myhub-link="${n.toLowerCase()}"><i class="fa-solid ${i}"></i><span>${n}</span></a>`).join('');
  const el=document.createElement('div');el.id='myhubGlobal';el.innerHTML=`
- <button class="myhub-avatar-btn" id="myhubAvatarBtn" aria-label="Buka menu MyHub"><img src="${esc(p.photo)}" alt="Profil"><span class="avatar-status"></span></button>
- <div class="myhub-overlay" id="myhubOverlay"></div>
+ <header class="myhub-topbar ${isHome?'is-home':'not-home'}">
+   <a class="myhub-brand" href="${depth}index.html" aria-label="MyHub Home"><span class="myhub-brand-mark"><i class="fa-solid fa-cube"></i></span><strong>MyHub</strong></a>
+   <div class="myhub-top-actions">
+     <button class="myhub-top-btn" data-action="search" aria-label="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+     <button class="myhub-top-btn" aria-label="Notifikasi"><i class="fa-regular fa-bell"></i></button>
+     ${isHome?`<button class="myhub-avatar-btn" id="myhubAvatarBtn" aria-label="Buka menu profil"><img src="${esc(p.photo)}" alt="Profil"><span class="avatar-status"></span></button>`:''}
+   </div>
+ </header>
+ ${isHome?`<div class="myhub-overlay" id="myhubOverlay"></div>
  <aside class="myhub-drawer" id="myhubDrawer" aria-hidden="true">
   <div class="drawer-head"><a href="${depth}profile.html" class="drawer-profile"><img id="drawerPhoto" src="${esc(p.photo)}" alt="Profil"><div><strong id="drawerName">${esc(p.name)}</strong><small>@myhub</small></div></a><button id="drawerClose" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button></div>
   <div class="drawer-actions"><button data-action="dashboard"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></button><button data-action="search"><i class="fa-solid fa-magnifying-glass"></i><span>Cari</span></button><button data-action="achievements"><i class="fa-solid fa-medal"></i><span>Achievement</span></button></div>
   <nav class="drawer-nav">${menuItems}</nav>
   <div class="drawer-bottom"><button data-action="lock"><i class="fa-solid fa-lock"></i><span>Kunci MyHub</span></button><a href="${depth}settings.html"><i class="fa-solid fa-gear"></i><span>Pengaturan</span></a></div>
- </aside>
+ </aside>`:''}
  <div class="myhub-modal" id="myhubModal"><div class="modal-card"><button class="modal-close" data-close-modal><i class="fa-solid fa-xmark"></i></button><div id="myhubModalContent"></div></div></div>
  <div class="myhub-lock" id="myhubLock"><div class="lock-card"><div class="lock-icon"><i class="fa-solid fa-lock"></i></div><h2>MyHub Terkunci</h2><p>Masukkan PIN untuk membuka.</p><input id="unlockPin" type="password" inputmode="numeric" maxlength="4" placeholder="••••"><button id="unlockBtn">Buka MyHub</button><small id="unlockError"></small></div></div>
  <div class="myhub-toast" id="myhubToast"></div>
  <div class="mini-player" id="miniPlayer"><i class="fa-solid fa-music"></i><div><b>MyHub Music</b><small>Spotify playlist</small></div><a href="${depth}music.html" aria-label="Buka Music"><i class="fa-solid fa-play"></i></a></div>`;
  document.body.appendChild(el);
  const drawer=document.getElementById('myhubDrawer'), overlay=document.getElementById('myhubOverlay');
- const open=()=>{drawer.classList.add('open');overlay.classList.add('show');drawer.setAttribute('aria-hidden','false')};
- const close=()=>{drawer.classList.remove('open');overlay.classList.remove('show');drawer.setAttribute('aria-hidden','true')};
- document.getElementById('myhubAvatarBtn').onclick=open;document.getElementById('drawerClose').onclick=close;overlay.onclick=close;
+ const open=()=>{if(!drawer)return;drawer.classList.add('open');overlay.classList.add('show');drawer.setAttribute('aria-hidden','false')};
+ const close=()=>{if(!drawer)return;drawer.classList.remove('open');overlay.classList.remove('show');drawer.setAttribute('aria-hidden','true')};
+ const avatar=document.getElementById('myhubAvatarBtn');
+ if(avatar)avatar.onclick=open;
+ const dc=document.getElementById('drawerClose'); if(dc)dc.onclick=close;
+ if(overlay)overlay.onclick=close;
  document.querySelectorAll('[data-action]').forEach(b=>b.addEventListener('click',()=>{const a=b.dataset.action;close(); if(a==='dashboard')dashboard(); if(a==='search')search(); if(a==='achievements')achievements(); if(a==='lock')lock();}));
  updateProfileUI(); setupFavorites(); setupSearchKeys(); setupGallery(); setupProfileBanner();
 }
