@@ -8,92 +8,23 @@
     <title>Settings — MyHub</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="aero-shards.css">
-
-    <style>
-        /* GANTI FOTO HOME */
-        .home-photo-setting {
-            display: block;
-        }
-
-        .home-photo-preview {
-            width: 100%;
-            height: 180px;
-            margin: 14px 0;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(90, 150, 255, .25);
-            background: rgba(5, 15, 30, .65);
-        }
-
-        .home-photo-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .home-photo-actions {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .home-photo-actions button,
-        .home-photo-actions label {
-            border: 1px solid rgba(80, 150, 255, .3);
-            border-radius: 12px;
-            padding: 11px 15px;
-            background: rgba(40, 124, 255, .15);
-            color: white;
-            cursor: pointer;
-            font: inherit;
-        }
-
-        .home-photo-actions label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .home-photo-actions button.save-photo {
-            background: var(--accent);
-            border-color: var(--accent);
-            font-weight: 700;
-        }
-
-        .home-photo-actions button.reset-photo {
-            background: rgba(255, 70, 70, .12);
-        }
-
-        #homePhotoInput {
-            display: none;
-        }
-
-        #homePhotoStatus {
-            margin-top: 10px;
-            color: #9baac0;
-            font-size: 13px;
-            min-height: 18px;
-        }
-    </style>
 </head>
 
 <body>
+
     <div class="aero-shards" aria-hidden="true"><canvas id="aeroShardsCanvas"></canvas></div>
 
     <div class="app">
 
         <header class="header">
-            <a class="back-home" href="index.html" aria-label="Kembali ke Home" title="Kembali ke Home">
-                <i class="fa-solid fa-house"></i>
-            </a>
-
+        <a class="back-home" href="index.html" aria-label="Kembali ke Home" title="Kembali ke Home"><i class="fa-solid fa-house"></i></a>
             <div>
                 <p class="small-title">MYHUB</p>
                 <h1>Settings</h1>
-                <p class="subtitle">Atur MyHub sesuai keinginan lu</p>
+                <p class="subtitle">Atur MyHub sesuai keinginan lu </p>
             </div>
 
             <div class="profile-icon">
@@ -102,6 +33,7 @@
         </header>
 
         <main>
+
             <section class="settings-box">
 
                 <div class="section-title">
@@ -114,6 +46,7 @@
                         <h3>Notifikasi</h3>
                         <p>Aktifkan notifikasi MyHub</p>
                     </div>
+
                     <label class="switch">
                         <input type="checkbox" id="notificationToggle">
                         <span class="slider"></span>
@@ -125,6 +58,7 @@
                         <h3>Efek Animasi</h3>
                         <p>Gunakan animasi pada tampilan</p>
                     </div>
+
                     <label class="switch">
                         <input type="checkbox" id="animationToggle" checked>
                         <span class="slider"></span>
@@ -136,6 +70,7 @@
                         <h3>Mode Tampilan</h3>
                         <p>Gunakan tampilan gelap MyHub</p>
                     </div>
+
                     <label class="switch">
                         <input type="checkbox" id="darkModeToggle" checked>
                         <span class="slider"></span>
@@ -147,44 +82,13 @@
                         <h3>Warna Aksen</h3>
                         <p>Pilih warna utama MyHub</p>
                     </div>
+
                     <select id="accentColor">
                         <option value="blue">Biru</option>
                         <option value="purple">Ungu</option>
                         <option value="green">Hijau</option>
                         <option value="red">Merah</option>
                     </select>
-                </div>
-
-                <!-- FITUR BARU -->
-                <div class="setting-item home-photo-setting">
-                    <div>
-                        <h3>Foto Home</h3>
-                        <p>Ganti foto besar yang tampil di Home</p>
-
-                        <div class="home-photo-preview">
-                            <img id="homePhotoPreview" src="fotohome.jpeg" alt="Preview Foto Home">
-                        </div>
-
-                        <div class="home-photo-actions">
-                            <label for="homePhotoInput">
-                                <i class="fa-solid fa-image"></i>
-                                Pilih Foto
-                            </label>
-
-                            <button type="button" class="save-photo" id="saveHomePhoto">
-                                <i class="fa-solid fa-check"></i>
-                                Simpan
-                            </button>
-
-                            <button type="button" class="reset-photo" id="resetHomePhoto">
-                                <i class="fa-solid fa-rotate-left"></i>
-                                Reset
-                            </button>
-                        </div>
-
-                        <input id="homePhotoInput" type="file" accept="image/*">
-                        <p id="homePhotoStatus"></p>
-                    </div>
                 </div>
 
                 <div class="setting-item danger-setting">
@@ -200,10 +104,16 @@
                 </div>
 
             </section>
+
+            <br>
+
+
         </main>
+
     </div>
 
     <script src="script.js"></script>
+
     <script src="aero-shards.js"></script>
 
     <nav class="bottom-nav">
@@ -225,86 +135,10 @@
         </a>
     </nav>
 
-    <script>
-        (function () {
-            const p = location.pathname.split("/").pop() || "index.html";
-            const map = {
-                "index.html": "home",
-                "game.html": "game",
-                "finance.html": "finance",
-                "settings.html": "settings"
-            };
-            const k = map[p] || "";
-            document.querySelectorAll(".bottom-nav a").forEach(a => {
-                if (a.dataset.nav === k) a.classList.add("active");
-            });
-        })();
-
-        /* ==========================
-           GANTI FOTO HOME
-        ========================== */
-        (function () {
-            const KEY = "myhubHomePhoto";
-
-            const input = document.getElementById("homePhotoInput");
-            const preview = document.getElementById("homePhotoPreview");
-            const saveBtn = document.getElementById("saveHomePhoto");
-            const resetBtn = document.getElementById("resetHomePhoto");
-            const status = document.getElementById("homePhotoStatus");
-
-            let selectedPhoto = null;
-
-            const savedPhoto = localStorage.getItem(KEY);
-            if (savedPhoto) {
-                preview.src = savedPhoto;
-            }
-
-            input.addEventListener("change", function () {
-                const file = this.files[0];
-                if (!file) return;
-
-                if (!file.type.startsWith("image/")) {
-                    status.textContent = "File yang dipilih harus berupa foto.";
-                    return;
-                }
-
-                const reader = new FileReader();
-
-                reader.onload = function (event) {
-                    selectedPhoto = event.target.result;
-                    preview.src = selectedPhoto;
-                    status.textContent = "Preview siap. Tekan Simpan.";
-                };
-
-                reader.readAsDataURL(file);
-            });
-
-            saveBtn.addEventListener("click", function () {
-                if (!selectedPhoto) {
-                    status.textContent = "Pilih foto dulu.";
-                    return;
-                }
-
-                try {
-                    localStorage.setItem(KEY, selectedPhoto);
-                    status.textContent = "Foto Home berhasil disimpan.";
-                    selectedPhoto = null;
-                    input.value = "";
-                } catch (error) {
-                    status.textContent = "Foto terlalu besar untuk disimpan di browser. Coba foto yang lebih kecil.";
-                }
-            });
-
-            resetBtn.addEventListener("click", function () {
-                localStorage.removeItem(KEY);
-                selectedPhoto = null;
-                input.value = "";
-                preview.src = "fotohome.jpeg";
-                status.textContent = "Foto Home dikembalikan ke foto bawaan.";
-            });
-        })();
-    </script>
-
-    <script src="myhub-plus.js"></script>
+<script>
+(function(){const p=location.pathname.split("/").pop()||"index.html";const map={"index.html":"home","game.html":"game","finance.html":"finance","settings.html":"settings"};const k=map[p]||"";document.querySelectorAll(".bottom-nav a").forEach(a=>{if(a.dataset.nav===k)a.classList.add("active");});})();
+</script>
+<script src="myhub-plus.js"></script>
 </body>
+
 </html>
