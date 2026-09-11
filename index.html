@@ -1,210 +1,106 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>MyHub</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="aero-shards.css">
-    <link rel="manifest" href="manifest.json">
-
-    <style>
-        /* GANTI FOTO HOME */
-        .hero {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            background: rgba(5, 15, 30, .35);
-        }
-
-        .hero-bg::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg,
-                rgba(5, 11, 22, .88) 0%,
-                rgba(5, 11, 22, .58) 48%,
-                rgba(5, 11, 22, .32) 100%);
-        }
-
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-            opacity: .72;
-        }
-
-        .hero-text {
-            position: relative;
-            z-index: 1;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyHub App</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
 <body>
-    <div class="aero-shards" aria-hidden="true"><canvas id="aeroShardsCanvas"></canvas></div>
 
-    <div class="app">
+  <!-- App Container -->
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <h1 id="header-title">Home</h1>
+    </header>
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="hero-bg">
-                <img id="homePhoto" src="fotohome.jpeg" alt="Foto Home">
-            </div>
+    <!-- Main Content Views -->
+    <main class="app-content">
+      <!-- Home View -->
+      <section id="view-home" class="view-page active">
+        <div class="card">
+          <h2>Selamat Datang di MyHub! 👋</h2>
+          <p>Sistem navigasi telah diperbarui. Fitur Quick Access sekarang tersedia langsung dari Dock Bar di bagian bawah.</p>
+        </div>
+        <div class="card grid-2">
+          <div class="stat-box">
+            <span class="stat-num">12</span>
+            <span class="stat-label">Aktivitas Hari Ini</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">5</span>
+            <span class="stat-label">Tugas Selesai</span>
+          </div>
+        </div>
+      </section>
 
-            <div class="hero-text">
-                <p>MY PERSONAL HUB</p>
+      <!-- Quick Access View (Replacing Game) -->
+      <section id="view-quick-access" class="view-page">
+        <div class="section-title">
+          <h2>⚡ Quick Access / Akses Cepat</h2>
+          <p>Pintas pintas utama untuk akses fitur cepat</p>
+        </div>
 
-                <h2>
-                    Semua yang<br>
-                    lu butuhin ada di sini.
-                </h2>
-
-                <span>
-                    Music • Games • Notes • Gallery
-                </span>
-            </div>
-        </section>
-
-        <!-- MENU -->
-        <section class="menu-section">
-
-            <div class="section-title">
-                <p>MY APPS</p>
-                <h2>Quick Access</h2>
-            </div>
-
-            <div class="menu">
-                <a href="music.html" class="menu-card">
-                    <div class="menu-icon"><i class="fa-solid fa-music"></i></div>
-                    <div><h3>Music</h3><p>Playlist favorit</p></div>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-                <a href="game.html" class="menu-card">
-                    <div class="menu-icon"><i class="fa-solid fa-gamepad"></i></div>
-                    <div><h3>Game</h3><p>Game favorit</p></div>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-                <a href="calendar.html" class="menu-card">
-                    <div class="menu-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                    <div><h3>Calendar</h3><p>Jadwal & kegiatan</p></div>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-                <a href="clock.html" class="menu-card">
-                    <div class="menu-icon"><i class="fa-solid fa-clock"></i></div>
-                    <div><h3>Clock</h3><p>Jam & alarm</p></div>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-                <a href="finance.html" class="menu-card">
-                    <div class="menu-icon"><i class="fa-solid fa-wallet"></i></div>
-                    <div><h3>Finance</h3><p>Catatan keuangan</p></div>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-                <a href="certificates.html" class="menu-card">
-                    <div class="menu-icon"><i class="fa-solid fa-trophy"></i></div>
-                    <div><h3>Certificates</h3><p>Sertifikat & prestasi</p></div>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-                <a href="gallery.html" class="menu-card">
-                    <div class="menu-icon"><i class="fa-solid fa-images"></i></div>
-                    <div><h3>Gallery</h3><p>Foto-foto</p></div>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-                <a href="notes.html" class="menu-card">
-                    <div class="menu-icon"><i class="fa-solid fa-note-sticky"></i></div>
-                    <div><h3>Notes</h3><p>Catatan pribadi</p></div>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-                <a href="todo.html" class="menu-card">
-                    <div class="menu-icon"><i class="fa-solid fa-list-check"></i></div>
-                    <div><h3>To-Do</h3><p>Daftar kegiatan</p></div>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-                <a href="settings.html" class="menu-card">
-                    <div class="menu-icon"><i class="fa-solid fa-gear"></i></div>
-                    <div><h3>Settings</h3><p>Pengaturan MyHub</p></div>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-            </div>
-        </section>
-
-        <section id="myhub-dashboard-home" class="myhub-home-dashboard">
-            <div class="section-title">
-                <p>MYHUB PLUS</p>
-                <h2>Aktivitas & Favorit</h2>
-            </div>
-            <div class="home-dashboard-grid">
-                <button data-action="dashboard"><i class="fa-solid fa-chart-pie"></i><b>Dashboard</b><small>Lihat statistik</small></button>
-                <button data-action="achievements"><i class="fa-solid fa-medal"></i><b>Achievement</b><small>Pencapaian lu</small></button>
-                <button data-action="search"><i class="fa-solid fa-magnifying-glass"></i><b>Search</b><small>Cari fitur</small></button>
-                <a href="profile.html"><i class="fa-solid fa-user"></i><b>Profil</b><small>Atur profil</small></a>
-            </div>
-        </section>
-    </div>
-
-    <script src="script.js"></script>
-    <script src="aero-shards.js"></script>
-
-    <nav class="bottom-nav">
-        <a href="index.html" data-nav="home">
-            <i class="fa-solid fa-house"></i>
-            <span>Home</span>
-        </a>
-        <a href="game.html" data-nav="game">
-            <i class="fa-solid fa-gamepad"></i>
-            <span>Game</span>
-        </a>
-        <a href="finance.html" data-nav="finance">
-            <i class="fa-solid fa-wallet"></i>
-            <span>Finance</span>
-        </a>
-        <a href="settings.html" data-nav="settings">
-            <i class="fa-solid fa-gear"></i>
+        <div class="quick-grid">
+          <button class="quick-card" onclick="alert('Membuka Profil...')">
+            <i data-lucide="user"></i>
+            <span>Profil Saya</span>
+          </button>
+          <button class="quick-card" onclick="alert('Membuka Catatan...')">
+            <i data-lucide="file-text"></i>
+            <span>Catatan</span>
+          </button>
+          <button class="quick-card" onclick="alert('Membuka Jadwal...')">
+            <i data-lucide="calendar"></i>
+            <span>Jadwal Hari Ini</span>
+          </button>
+          <button class="quick-card" onclick="alert('Membuka Pengaturan...')">
+            <i data-lucide="settings"></i>
             <span>Pengaturan</span>
-        </a>
+          </button>
+          <button class="quick-card" onclick="alert('Membuka Statistik...')">
+            <i data-lucide="bar-chart-3"></i>
+            <span>Statistik</span>
+          </button>
+          <button class="quick-card" onclick="alert('Membuka Pesan...')">
+            <i data-lucide="mail"></i>
+            <span>Pesan Masuk</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Profile View -->
+      <section id="view-profile" class="view-page">
+        <div class="card">
+          <h2>👤 Profil Pengguna</h2>
+          <p>Informasi akun dan konfigurasi aplikasi MyHub.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Dock Bar -->
+    <nav class="dock-bar">
+      <button class="dock-item active" data-target="view-home" data-title="Home">
+        <i data-lucide="home"></i>
+        <span>Beranda</span>
+      </button>
+
+      <!-- Quick Access button replacing Game -->
+      <button class="dock-item" data-target="view-quick-access" data-title="Quick Access">
+        <i data-lucide="zap"></i>
+        <span>Quick Access</span>
+      </button>
+
+      <button class="dock-item" data-target="view-profile" data-title="Profil">
+        <i data-lucide="user"></i>
+        <span>Profil</span>
+      </button>
     </nav>
+  </div>
 
-    <script>
-        (function () {
-            const p = location.pathname.split("/").pop() || "index.html";
-            const map = {
-                "index.html": "home",
-                "game.html": "game",
-                "finance.html": "finance",
-                "settings.html": "settings"
-            };
-            const k = map[p] || "";
-            document.querySelectorAll(".bottom-nav a").forEach(a => {
-                if (a.dataset.nav === k) a.classList.add("active");
-            });
-
-            const savedPhoto = localStorage.getItem("myhubHomePhoto");
-            const homePhoto = document.getElementById("homePhoto");
-            if (savedPhoto && homePhoto) {
-                homePhoto.src = savedPhoto;
-            }
-        })();
-    </script>
-
-    <script src="myhub-plus.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

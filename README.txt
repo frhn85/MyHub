@@ -1,18 +1,15 @@
-MyHub - Ganti Foto Home
+MyHub - Quick Access Dock Bar Update
+========================================
 
-Isi ZIP:
-- index.html
-- settings.html
+Struktur File:
+- index.html   : Halaman utama dengan komponen Dock Bar & Tampilan Quick Access
+- style.css    : Styling antarmuka modern (Dark Theme)
+- script.js    : Logika navigasi & penggantian tab
 
-Cara pasang:
-1. Backup index.html dan settings.html lama.
-2. Ganti kedua file tersebut dengan file dari ZIP ini.
-3. File style.css, script.js, aero-shards.css, aero-shards.js, fotohome.jpeg, dan file MyHub lainnya tetap seperti sekarang.
-4. Buka MyHub -> Pengaturan -> Foto Home.
-5. Pilih foto -> Simpan.
-6. Kembali ke Home. Foto besar Home akan berubah.
+Perubahan Utama:
+1. Menghapus ikon/menu "Game" di Dock Bar.
+2. Menambahkan menu "Quick Access" dengan ikon petir (Zap) di posisi Dock Bar.
+3. Membuat halaman/view khusus Quick Access dengan grid tombol pintasan.
 
-Catatan:
-- Foto pilihan disimpan di browser/device menggunakan localStorage.
-- Foto tidak di-upload ke GitHub.
-- Tombol Reset mengembalikan foto ke fotohome.jpeg.
+Cara Menjalankan:
+Cukup ekstrak berkas ZIP ini dan buka `index.html` langsung di browser Anda.
