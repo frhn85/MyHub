@@ -1,3 +1,10 @@
+// Account-aware storage helper. myhub-plus.js also defines this helper; this fallback
+// lets script.js run correctly before that global script is loaded.
+function accountKey(key){
+    const account = localStorage.getItem("myhubCurrentAccount");
+    return account ? "myhub:" + account + ":" + key : key;
+}
+
 // ==========================
 // MYHUB SCRIPT
 // ==========================
@@ -85,7 +92,7 @@ if (saveNote) {
         });
 
         localStorage.setItem(
-            "myhubNotes",
+            accountKey("myhubNotes"),
             JSON.stringify(notes)
         );
 
@@ -103,7 +110,7 @@ function deleteNote(index) {
     notes.splice(index, 1);
 
     localStorage.setItem(
-        "myhubNotes",
+        accountKey("myhubNotes"),
         JSON.stringify(notes)
     );
 
@@ -202,7 +209,7 @@ if (addTodo) {
         });
 
         localStorage.setItem(
-            "myhubTodos",
+            accountKey("myhubTodos"),
             JSON.stringify(todos)
         );
 
@@ -360,7 +367,7 @@ if (addFinance) {
         });
 
         localStorage.setItem(
-            "myhubFinance",
+            accountKey("myhubFinance"),
             JSON.stringify(finances)
         );
 
@@ -376,7 +383,7 @@ function deleteFinance(index) {
     finances.splice(index, 1);
 
     localStorage.setItem(
-        "myhubFinance",
+        accountKey("myhubFinance"),
         JSON.stringify(finances)
     );
 
@@ -493,7 +500,7 @@ function deleteCertificate(index) {
     certificates.splice(index, 1);
 
     localStorage.setItem(
-        "myhubCertificates",
+        accountKey("myhubCertificates"),
         JSON.stringify(certificates)
     );
 
