@@ -40,7 +40,7 @@ const noteText = document.getElementById("noteText");
 const saveNote = document.getElementById("saveNote");
 const savedNotes = document.getElementById("savedNotes");
 
-let notes = JSON.parse(localStorage.getItem("myhubNotes")) || [];
+let notes = JSON.parse(localStorage.getItem(accountKey("myhubNotes"))) || [];
 
 function displayNotes() {
 
@@ -121,7 +121,7 @@ const todoInput = document.getElementById("todoInput");
 const addTodo = document.getElementById("addTodo");
 const todoList = document.getElementById("todoList");
 
-let todos = JSON.parse(localStorage.getItem("myhubTodos")) || [];
+let todos = JSON.parse(localStorage.getItem(accountKey("myhubTodos"))) || [];
 
 
 function displayTodos() {
@@ -289,7 +289,7 @@ const addFinance = document.getElementById("addFinance");
 const financeList = document.getElementById("financeList");
 const balance = document.getElementById("balance");
 
-let finances = JSON.parse(localStorage.getItem("myhubFinance")) || [];
+let finances = JSON.parse(localStorage.getItem(accountKey("myhubFinance"))) || [];
 
 function formatRupiah(number) {
     return new Intl.NumberFormat("id-ID", {
@@ -396,7 +396,7 @@ const addCertificate = document.getElementById("addCertificate");
 const certificateList = document.getElementById("certificateList");
 
 let certificates =
-    JSON.parse(localStorage.getItem("myhubCertificates")) || [];
+    JSON.parse(localStorage.getItem(accountKey("myhubCertificates"))) || [];
 
 function displayCertificates() {
     if (!certificateList) return;
@@ -516,7 +516,7 @@ const animationToggle =
 if (notificationToggle) {
 
     notificationToggle.checked =
-        localStorage.getItem("myhubNotifications") === "true";
+        localStorage.getItem(accountKey("myhubNotifications")) === "true";
 
     notificationToggle.addEventListener("change", () => {
 
@@ -532,7 +532,7 @@ if (notificationToggle) {
 if (animationToggle) {
 
     const savedAnimation =
-        localStorage.getItem("myhubAnimation");
+        localStorage.getItem(accountKey("myhubAnimation"));
 
     if (savedAnimation !== null) {
         animationToggle.checked =
@@ -562,7 +562,7 @@ const darkModeToggle =
 if (darkModeToggle) {
 
     const savedDarkMode =
-        localStorage.getItem("myhubDarkMode");
+        localStorage.getItem(accountKey("myhubDarkMode"));
 
     if (savedDarkMode !== null) {
         darkModeToggle.checked =
@@ -608,13 +608,13 @@ function applyAccentColor(color) {
         selectedColor
     );
 
-    localStorage.setItem("myhubAccent", color);
+    localStorage.setItem(accountKey("myhubAccent"), color);
 }
 
 if (accentColor) {
 
     const savedAccent =
-        localStorage.getItem("myhubAccent") || "blue";
+        localStorage.getItem(accountKey("myhubAccent")) || "blue";
 
     accentColor.value = savedAccent;
     applyAccentColor(savedAccent);
@@ -638,10 +638,10 @@ if (clearAllData) {
 
         if (!confirmReset) return;
 
-        localStorage.removeItem("myhubNotes");
-        localStorage.removeItem("myhubTodos");
-        localStorage.removeItem("myhubFinance");
-        localStorage.removeItem("myhubCertificates");
+        localStorage.removeItem(accountKey("myhubNotes"));
+        localStorage.removeItem(accountKey("myhubTodos"));
+        localStorage.removeItem(accountKey("myhubFinance"));
+        localStorage.removeItem(accountKey("myhubCertificates"));
 
         alert("Semua data MyHub berhasil dihapus!");
 
@@ -654,8 +654,8 @@ if (clearAllData) {
 const profileName = document.getElementById("profileName");
 const profileBio = document.getElementById("profileBio");
 
-const savedName = localStorage.getItem("myhubName");
-const savedBio = localStorage.getItem("myhubBio");
+const savedName = localStorage.getItem(accountKey("myhubName"));
+const savedBio = localStorage.getItem(accountKey("myhubBio"));
 
 if (profileName && savedName) {
     profileName.textContent = savedName;
@@ -672,7 +672,7 @@ const profilePhoto = document.getElementById("profilePhoto");
 
 if (profileImageInput && profilePhoto) {
 
-    const savedPhoto = localStorage.getItem("myhubProfilePhoto");
+    const savedPhoto = localStorage.getItem(accountKey("myhubProfilePhoto"));
 
     if (savedPhoto) {
         profilePhoto.src = savedPhoto;
@@ -711,10 +711,10 @@ if (editProfile) {
     editProfile.addEventListener("click", () => {
 
         editName.value =
-            localStorage.getItem("myhubName") || "Frhn";
+            localStorage.getItem(accountKey("myhubName")) || "Frhn";
 
         editBio.value =
-            localStorage.getItem("myhubBio") ||
+            localStorage.getItem(accountKey("myhubBio")) ||
             "Welcome to my personal space.";
 
         editProfilePanel.classList.add("active");
@@ -732,8 +732,8 @@ if (saveProfile) {
             return;
         }
 
-        localStorage.setItem("myhubName", name);
-        localStorage.setItem("myhubBio", bio);
+        localStorage.setItem(accountKey("myhubName"), name);
+        localStorage.setItem(accountKey("myhubBio"), bio);
 
         location.reload();
     });
