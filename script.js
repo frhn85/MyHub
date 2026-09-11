@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize Lucide Icons
-  lucide.createIcons();
+  if (window.lucide) {
+    lucide.createIcons();
+  }
 
   const dockItems = document.querySelectorAll('.dock-item');
   const viewPages = document.querySelectorAll('.view-page');
