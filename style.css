@@ -3407,3 +3407,19 @@ body.myhub-account-locked{overflow:hidden!important}.myhub-account-gate{position
   .bottom-nav a { width: 50px; height: 50px; font-size: 9px; }
   .bottom-nav a i { font-size: 18px; }
 }
+
+/* Quick Access cards: extra side breathing room */
+.quick-access-page .menu {
+  width: calc(100% - 28px);
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 600px) {
+  .quick-access-page .menu {
+    width: calc(100% - 20px);
+  }
+}
+/* Quick Access: no hero/photo above the title */
+.quick-access-page > .hero {
+  display: none !important;
+}
