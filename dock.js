@@ -23,13 +23,15 @@
     const rect = dock.getBoundingClientRect();
     const x = event.clientX;
     const maxDistance = 125;
+    // React Bits settings: baseItemSize=50, magnification=70
+    // Max scale = (50 + 70) / 50 = 1.4
 
     items.forEach(item => {
       const r = item.getBoundingClientRect();
       const center = r.left + r.width / 2;
       const distance = Math.abs(x - center);
       const influence = Math.max(0, 1 - distance / maxDistance);
-      const scale = 1 + influence * 0.28;
+      const scale = 1 + influence * 0.40;
       const lift = influence * -7;
       item.style.setProperty('--dock-scale', scale.toFixed(3));
       item.style.setProperty('--dock-lift', lift.toFixed(2) + 'px');
