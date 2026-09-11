@@ -168,7 +168,7 @@ function displayTodos() {
             todos[index].done = checkbox.checked;
 
             localStorage.setItem(
-                "myhubTodos",
+                accountKey("myhubTodos"),
                 JSON.stringify(todos)
             );
 
@@ -181,7 +181,7 @@ function displayTodos() {
             todos.splice(index, 1);
 
             localStorage.setItem(
-                "myhubTodos",
+                accountKey("myhubTodos"),
                 JSON.stringify(todos)
             );
 
@@ -461,7 +461,7 @@ if (addCertificate) {
                 });
 
                 localStorage.setItem(
-                    "myhubCertificates",
+                    accountKey("myhubCertificates"),
                     JSON.stringify(certificates)
                 );
 
@@ -483,7 +483,7 @@ if (addCertificate) {
             });
 
             localStorage.setItem(
-                "myhubCertificates",
+                accountKey("myhubCertificates"),
                 JSON.stringify(certificates)
             );
 
@@ -528,7 +528,7 @@ if (notificationToggle) {
     notificationToggle.addEventListener("change", () => {
 
         localStorage.setItem(
-            "myhubNotifications",
+            accountKey("myhubNotifications"),
             notificationToggle.checked
         );
 
@@ -549,7 +549,7 @@ if (animationToggle) {
     animationToggle.addEventListener("change", () => {
 
         localStorage.setItem(
-            "myhubAnimation",
+            accountKey("myhubAnimation"),
             animationToggle.checked
         );
 
@@ -584,7 +584,7 @@ if (darkModeToggle) {
     darkModeToggle.addEventListener("change", () => {
 
         localStorage.setItem(
-            "myhubDarkMode",
+            accountKey("myhubDarkMode"),
             darkModeToggle.checked
         );
 
@@ -696,7 +696,7 @@ if (profileImageInput && profilePhoto) {
         reader.onload = () => {
             profilePhoto.src = reader.result;
             localStorage.setItem(
-                "myhubProfilePhoto",
+                accountKey("myhubProfilePhoto"),
                 reader.result
             );
         };
