@@ -85,9 +85,9 @@
             <i class="fa-solid fa-house"></i>
             <span>Home</span>
         </a>
-        <a href="game.html" data-nav="game">
-            <i class="fa-solid fa-gamepad"></i>
-            <span>Game</span>
+        <a href="quick-access.html" data-nav="quick">
+            <i class="fa-solid fa-grip"></i>
+            <span>Quick Access</span>
         </a>
         <a href="finance.html" data-nav="finance">
             <i class="fa-solid fa-wallet"></i>
@@ -100,7 +100,7 @@
     </nav>
 
 <script>
-(function(){const p=location.pathname.split("/").pop()||"index.html";const map={"index.html":"home","game.html":"game","finance.html":"finance","settings.html":"settings"};const k=map[p]||"";document.querySelectorAll(".bottom-nav a").forEach(a=>{if(a.dataset.nav===k)a.classList.add("active");});})();
+(function(){const p=location.pathname.split("/").pop()||"index.html";const map={"index.html":"home","quick-access.html":"quick","finance.html":"finance","settings.html":"settings"};const k=map[p]||"";document.querySelectorAll(".bottom-nav a").forEach(a=>{if(a.dataset.nav===k)a.classList.add("active");});})();
 </script>
 <script>
 (function(){

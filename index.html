@@ -44,165 +44,7 @@
 
 
         <!-- MENU -->
-        <section class="menu-section">
-
-            <div class="section-title">
-                <p>MY APPS</p>
-                <h2>Quick Access</h2>
-            </div>
-
-
-            <div class="menu">
-
-                <!-- MUSIC -->
-                <a href="music.html" class="menu-card">
-                    <div class="menu-icon">
-                        <i class="fa-solid fa-music"></i>
-                    </div>
-
-                    <div>
-                        <h3>Music</h3>
-                        <p>Playlist favorit</p>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-
-                <!-- GAME -->
-                <a href="game.html" class="menu-card">
-                    <div class="menu-icon">
-                        <i class="fa-solid fa-gamepad"></i>
-                    </div>
-
-                    <div>
-                        <h3>Game</h3>
-                        <p>Game favorit</p>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-
-                <!-- CALENDAR -->
-                <a href="calendar.html" class="menu-card">
-                    <div class="menu-icon">
-                        <i class="fa-solid fa-calendar-days"></i>
-                    </div>
-
-                    <div>
-                        <h3>Calendar</h3>
-                        <p>Jadwal & kegiatan</p>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-
-                <!-- CLOCK -->
-                <a href="clock.html" class="menu-card">
-                    <div class="menu-icon">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-
-                    <div>
-                        <h3>Clock</h3>
-                        <p>Jam & alarm</p>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-
-                <!-- FINANCE -->
-                <a href="finance.html" class="menu-card">
-                    <div class="menu-icon">
-                        <i class="fa-solid fa-wallet"></i>
-                    </div>
-
-                    <div>
-                        <h3>Finance</h3>
-                        <p>Catatan keuangan</p>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-
-                <!-- CERTIFICATES -->
-                <a href="certificates.html" class="menu-card">
-                    <div class="menu-icon">
-                        <i class="fa-solid fa-trophy"></i>
-                    </div>
-
-                    <div>
-                        <h3>Certificates</h3>
-                        <p>Sertifikat & prestasi</p>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-
-                <!-- GALLERY -->
-                <a href="gallery.html" class="menu-card">
-                    <div class="menu-icon">
-                        <i class="fa-solid fa-images"></i>
-                    </div>
-
-                    <div>
-                        <h3>Gallery</h3>
-                        <p>Foto-foto</p>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-
-                <!-- NOTES -->
-                <a href="notes.html" class="menu-card">
-                    <div class="menu-icon">
-                        <i class="fa-solid fa-note-sticky"></i>
-                    </div>
-
-                    <div>
-                        <h3>Notes</h3>
-                        <p>Catatan pribadi</p>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-
-                <!-- TODO -->
-                <a href="todo.html" class="menu-card">
-                    <div class="menu-icon">
-                        <i class="fa-solid fa-list-check"></i>
-                    </div>
-
-                    <div>
-                        <h3>To-Do</h3>
-                        <p>Daftar kegiatan</p>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-                <a href="settings.html" class="menu-card">
-                    <div class="menu-icon">
-                        <i class="fa-solid fa-gear"></i>
-                    </div>
-
-                    <div>
-                        <h3>Settings</h3>
-                        <p>Pengaturan MyHub</p>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
-
-            </div>
-        </section>
+        
 
 
         <section id="myhub-dashboard-home" class="myhub-home-dashboard"><div class="section-title"><p>MYHUB PLUS</p><h2>Aktivitas & Favorit</h2></div><div class="home-dashboard-grid"><button data-action="dashboard"><i class="fa-solid fa-chart-pie"></i><b>Dashboard</b><small>Lihat statistik</small></button><button data-action="achievements"><i class="fa-solid fa-medal"></i><b>Achievement</b><small>Pencapaian lu</small></button><button data-action="search"><i class="fa-solid fa-magnifying-glass"></i><b>Search</b><small>Cari fitur</small></button><a href="profile.html"><i class="fa-solid fa-user"></i><b>Profil</b><small>Atur profil</small></a></div></section>
@@ -217,9 +59,9 @@
             <i class="fa-solid fa-house"></i>
             <span>Home</span>
         </a>
-        <a href="game.html" data-nav="game">
-            <i class="fa-solid fa-gamepad"></i>
-            <span>Game</span>
+        <a href="quick-access.html" data-nav="quick">
+            <i class="fa-solid fa-grip"></i>
+            <span>Quick Access</span>
         </a>
         <a href="finance.html" data-nav="finance">
             <i class="fa-solid fa-wallet"></i>
@@ -232,7 +74,7 @@
     </nav>
 
 <script>
-(function(){const p=location.pathname.split("/").pop()||"index.html";const map={"index.html":"home","game.html":"game","finance.html":"finance","settings.html":"settings"};const k=map[p]||"";document.querySelectorAll(".bottom-nav a").forEach(a=>{if(a.dataset.nav===k)a.classList.add("active");});})();
+(function(){const p=location.pathname.split("/").pop()||"index.html";const map={"index.html":"home","quick-access.html":"quick","finance.html":"finance","settings.html":"settings"};const k=map[p]||"";document.querySelectorAll(".bottom-nav a").forEach(a=>{if(a.dataset.nav===k)a.classList.add("active");});})();
 </script>
 <script src="myhub-plus.js"></script>
 </body>

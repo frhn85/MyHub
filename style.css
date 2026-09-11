@@ -3339,3 +3339,7 @@ body.myhub-account-locked{overflow:hidden!important}.myhub-account-gate{position
 .upload-custom input{position:absolute;inset:0;opacity:0;cursor:pointer}
 .myhub-empty{opacity:.55;text-align:center;padding:20px}
 @media(max-width:600px){.account-setting-buttons{width:100%;justify-content:stretch}.account-setting-buttons button{flex:1}.custom-list{max-height:260px}}
+
+/* Quick Access dock item */
+.bottom-nav a[data-nav="quick"] span{white-space:nowrap;font-size:10px;}
+@media(max-width:600px){.bottom-nav a[data-nav="quick"] span{font-size:9px;}}
