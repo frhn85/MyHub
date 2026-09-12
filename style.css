@@ -3495,3 +3495,19 @@ html.myhub-transition-ready .quick-access-page .menu-card:nth-child(8) { animati
     transform: none !important;
   }
 }
+
+
+/* Quick Access — ruang atas untuk judul */
+.quick-access-page .menu-section {
+  padding-top: 85px;
+}
+
+.quick-access-page .section-title {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .quick-access-page .menu-section {
+    padding-top: 70px;
+  }
+}
