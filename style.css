@@ -3497,17 +3497,8 @@ html.myhub-transition-ready .quick-access-page .menu-card:nth-child(8) { animati
 }
 
 
-/* Quick Access — ruang atas untuk judul */
-.quick-access-page .menu-section {
-  padding-top: 85px;
-}
-
-.quick-access-page .section-title {
-  margin-top: 0;
-}
-
+/* Extra breathing room below MyHub topbar */
+body { padding-top: 108px; }
 @media (max-width: 600px) {
-  .quick-access-page .menu-section {
-    padding-top: 70px;
-  }
+  body { padding-top: 108px; }
 }
