@@ -1338,17 +1338,24 @@ a {
     position: absolute;
     inset: 0;
 
+    background-image: none;
+
+    background-size: cover;
+    background-position: center;
+
+    z-index: 0;
+}
+
+/* Foto pribadi hanya tampil di Home */
+.home-hero .hero-bg {
     background-image:
         linear-gradient(90deg,
             rgba(4, 12, 28, 0.95) 0%,
             rgba(4, 12, 28, 0.72) 45%,
             rgba(4, 12, 28, 0.35) 100%),
         url("gallery/fotohome.jpeg");
-
     background-size: cover;
     background-position: center;
-
-    z-index: 0;
 }
 
 .hero-text {
@@ -3422,4 +3429,16 @@ body.myhub-account-locked{overflow:hidden!important}.myhub-account-gate{position
 /* Quick Access: no hero/photo above the title */
 .quick-access-page > .hero {
   display: none !important;
+}
+
+
+/* Quick Access: ruang atas supaya judul tidak terlalu mepet */
+.quick-access-page {
+    padding-top: 48px;
+}
+
+@media (max-width: 600px) {
+    .quick-access-page {
+        padding-top: 38px;
+    }
 }
